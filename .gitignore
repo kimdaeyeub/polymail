@@ -149,3 +149,4 @@ dist
 .pnp.*
 .open-next/
 .vercel/
+screeners/
