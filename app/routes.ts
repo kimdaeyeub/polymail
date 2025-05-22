@@ -1,9 +1,9 @@
 /**
  * Application Routes Configuration
- * 
+ *
  * This file defines all routes for the application using React Router's
  * file-based routing system. Routes are organized by feature and access level.
- * 
+ *
  * The structure uses layouts for shared UI elements and prefixes for route grouping.
  * This approach creates a hierarchical routing system that's both maintainable and scalable.
  */
@@ -48,6 +48,29 @@ export default [
     route("/auth/confirm", "features/auth/screens/confirm.tsx"),
     index("features/home/screens/home.tsx"),
     route("/error", "core/screens/error.tsx"),
+    route("/explore", "features/explore/screens/explore-dashboard.tsx"),
+    ...prefix("/newsletters", [
+      route(
+        "/:newsLetterId",
+        "features/newsletters/screens/newsletter-list-page.tsx",
+      ),
+      route(
+        "/:newsLetterId/:postId",
+        "features/newsletters/screens/newsletter-page.tsx",
+      ),
+      route(
+        "/:newsLetterId/subscribe",
+        "features/newsletters/screens/subscribe-page.tsx",
+      ),
+      route(
+        "/:newsLetterId/review",
+        "features/newsletters/screens/newsletter-review.tsx",
+      ),
+      route(
+        "/:newsLetterId/review/submit",
+        "features/newsletters/screens/newsletter-review-submit.tsx",
+      ),
+    ]),
     layout("core/layouts/public.layout.tsx", [
       // Routes that should only be visible to unauthenticated users.
       route("/login", "features/auth/screens/login.tsx"),
