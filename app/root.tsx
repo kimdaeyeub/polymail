@@ -175,7 +175,7 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
           <PreventFlashOnWrongTheme ssrTheme={Boolean(data?.theme)} />
         )}
       </head>
-      <body className="h-full">
+      <body className="bg-gradient h-fit">
         {children}
         <Toaster richColors position="bottom-right" />
         <ScrollRestoration />

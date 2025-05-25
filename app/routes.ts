@@ -63,6 +63,10 @@ export default [
         "features/newsletters/screens/subscribe-page.tsx",
       ),
       route(
+        "/:newsLetterId/submit",
+        "features/newsletters/screens/newsletter-submit-page.tsx",
+      ),
+      route(
         "/:newsLetterId/review",
         "features/newsletters/screens/newsletter-review.tsx",
       ),

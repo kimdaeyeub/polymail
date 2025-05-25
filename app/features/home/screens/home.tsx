@@ -99,9 +99,9 @@ export default function Home() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   return (
-    <div className="bg-background flex min-h-screen w-full flex-col">
+    <div className="flex min-h-screen w-full flex-col">
       {/* 상단 Hero 섹션 */}
-      <header className="from-primary/5 to-background relative flex flex-col items-center justify-center gap-6 bg-gradient-to-b px-4 py-16 text-center">
+      <header className="relative flex flex-col items-center justify-center gap-6 px-4 py-16 text-center">
         <div className="absolute top-4 right-4">
           <LangSwitcher />
         </div>
@@ -130,7 +130,7 @@ export default function Home() {
               )}
               className="focus:ring-primary flex-1 rounded-md border px-3 py-2 text-base shadow-sm focus:ring-2 focus:outline-none"
             />
-            <Button type="submit" variant="secondary">
+            <Button type="submit" variant="outline" size="lg">
               {t("home.hero.sample", "샘플 뉴스레터 받아보기")}
             </Button>
           </form>
@@ -139,7 +139,7 @@ export default function Home() {
 
       {/* 주요 가치/기능 카드 섹션 */}
       <section className="mx-auto flex max-w-5xl flex-col items-stretch justify-center gap-6 px-4 py-12 md:flex-row">
-        <Card className="min-w-[260px] flex-1">
+        <Card className="card-style min-w-[260px] flex-1">
           <CardHeader>
             <CardTitle>
               {t("home.feature.1.title", "AI 자동 번역 & 발송")}
@@ -152,7 +152,7 @@ export default function Home() {
             </CardDescription>
           </CardHeader>
         </Card>
-        <Card className="min-w-[260px] flex-1">
+        <Card className="card-style min-w-[260px] flex-1">
           <CardHeader>
             <CardTitle>
               {t("home.feature.2.title", "언어별 통계 대시보드")}
@@ -165,7 +165,8 @@ export default function Home() {
             </CardDescription>
           </CardHeader>
         </Card>
-        <Card className="min-w-[260px] flex-1">
+
+        <Card className="card-style min-w-[260px] flex-1">
           <CardHeader>
             <CardTitle>{t("home.feature.3.title", "초간단 시작")}</CardTitle>
             <CardDescription>
@@ -179,33 +180,39 @@ export default function Home() {
       </section>
 
       {/* 고객 인용문/신뢰 섹션 */}
-      <section className="bg-muted flex flex-col items-center gap-6 px-4 py-10">
+      <section className="flex flex-col items-center gap-6 px-4 py-10">
         <h2 className="text-primary mb-2 text-xl font-semibold">
           {t("home.testimonial.title", "실제 고객의 목소리")}
         </h2>
         <div className="flex w-full max-w-4xl flex-col gap-6 md:flex-row">
-          <Card className="flex-1">
-            <CardContent>
-              <blockquote className="mb-2 text-lg italic">
-                "PolyMail 덕분에 우리 뉴스레터의 글로벌 구독자 참여도가 3배나
-                증가했어요. 특히 한국, 일본, 독일 구독자들의 반응이 놀랍습니다."
-              </blockquote>
-              <div className="text-muted-foreground text-sm">
-                - 마이크 존슨, 글로벌 테크 뉴스레터 운영자
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="flex-1">
-            <CardContent>
-              <blockquote className="mb-2 text-lg italic">
-                "다국어 뉴스레터 발송이 이렇게 쉬울 줄 몰랐어요. 번역부터
-                발송까지 모든 것이 자동화되어 있어 시간이 정말 많이 절약됩니다."
-              </blockquote>
-              <div className="text-muted-foreground text-sm">
-                - 사라 김, 글로벌 스타트업 마케팅 매니저
-              </div>
-            </CardContent>
-          </Card>
+          <div className="rounded-xl bg-gradient-to-tr from-indigo-800 to-purple-700 p-px">
+            <Card className="flex-1">
+              <CardContent>
+                <blockquote className="mb-2 text-lg italic">
+                  "PolyMail 덕분에 우리 뉴스레터의 글로벌 구독자 참여도가 3배나
+                  증가했어요. 특히 한국, 일본, 독일 구독자들의 반응이
+                  놀랍습니다."
+                </blockquote>
+                <div className="text-muted-foreground text-sm">
+                  - 마이크 존슨, 글로벌 테크 뉴스레터 운영자
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="rounded-xl bg-gradient-to-tr from-indigo-800 to-purple-700 p-px">
+            <Card className="flex-1">
+              <CardContent>
+                <blockquote className="mb-2 text-lg italic">
+                  "다국어 뉴스레터 발송이 이렇게 쉬울 줄 몰랐어요. 번역부터
+                  발송까지 모든 것이 자동화되어 있어 시간이 정말 많이
+                  절약됩니다."
+                </blockquote>
+                <div className="text-muted-foreground text-sm">
+                  - 사라 김, 글로벌 스타트업 마케팅 매니저
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
