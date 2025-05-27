@@ -6,6 +6,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "~/core/components/ui/avatar";
+import { Button } from "~/core/components/ui/button";
 import {
   Card,
   CardDescription,
@@ -174,25 +175,35 @@ const cardData = [
 ];
 const ExploreDashboard = () => {
   return (
-    <div className="grid min-h-screen w-full grid-cols-3 grid-rows-6 gap-4 px-32 py-20">
-      {cardData.map((item, index) => (
-        <Link to={`/newsletters/3`}>
-          <Card key={index} className="card-style h-full w-full">
-            <CardHeader>
-              <div className="flex items-center gap-2.5">
-                <Avatar>
-                  <AvatarImage src={item.imageUrl} />
-                  <AvatarFallback>A</AvatarFallback>
-                </Avatar>
-                <CardTitle>{item.name}</CardTitle>
-              </div>
-              <CardDescription className="text-muted-foreground line-clamp-3">
-                {item.description}
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </Link>
-      ))}
+    <div className="flex flex-col items-center gap-4 py-20">
+      <h1 className="text-5xl font-bold">Explore</h1>
+      <div className="mt-5 flex items-center gap-2">
+        {["인기", "최신", "추천"].map((item, index) => (
+          <Button className="rounded-full" key={index}>
+            {item}
+          </Button>
+        ))}
+      </div>
+      <div className="grid w-full grid-cols-3 grid-rows-6 gap-4 px-32 py-8">
+        {cardData.map((item, index) => (
+          <Link to={`/newsletters/3`}>
+            <Card key={index} className="card-style h-full w-full">
+              <CardHeader>
+                <div className="flex items-center gap-2.5">
+                  <Avatar>
+                    <AvatarImage src={item.imageUrl} />
+                    <AvatarFallback>A</AvatarFallback>
+                  </Avatar>
+                  <CardTitle>{item.name}</CardTitle>
+                </div>
+                <CardDescription className="text-muted-foreground line-clamp-3">
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
